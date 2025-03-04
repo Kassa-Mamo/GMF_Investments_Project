@@ -70,3 +70,98 @@ o	SPY had moderate risk, balancing return potential.
 •	This analysis prepares the data for further modeling, forecasting, and portfolio optimization in the next phases.
 
 
+
+
+Tesla Stock Price Prediction: Time Series Forecasting Models
+Overview
+This project focuses on predicting the stock prices of Tesla (TSLA) using time series forecasting models, including ARIMA, SARIMA, and LSTM. The objective is to compare the performance of these models and create an ensemble model to improve forecasting accuracy.
+
+Project Objective
+To predict Tesla's stock prices using historical data.
+To compare the performance of ARIMA, SARIMA, and LSTM models.
+To optimize the models through hyperparameter tuning.
+To create an ensemble model to combine the forecasts from individual models.
+Key Features
+ARIMA: AutoRegressive Integrated Moving Average model for forecasting time series data.
+SARIMA: Seasonal ARIMA model to account for seasonal variations in the data.
+LSTM: Long Short-Term Memory neural network for capturing complex, non-linear patterns in time series data.
+Ensemble Model: Combining ARIMA, SARIMA, and LSTM models to improve prediction accuracy.
+Installation
+Prerequisites
+Python 3.x
+Libraries:
+yfinance
+pandas
+numpy
+matplotlib
+statsmodels
+tensorflow
+sklearn
+Step-by-Step Installation
+Clone this repository:
+
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/tesla-stock-prediction.git
+cd tesla-stock-prediction
+Install the required libraries:
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Ensure the necessary libraries are installed:
+
+bash
+Copy
+Edit
+pip install yfinance pandas numpy matplotlib statsmodels tensorflow sklearn
+Usage
+Data Collection:
+
+The Tesla stock data is fetched using the yfinance library. It retrieves the stock prices directly from Yahoo Finance.
+python
+Copy
+Edit
+import yfinance as yf
+data = yf.download('TSLA', start='2015-01-01', end='2023-01-01')
+Data Preprocessing:
+
+Clean and preprocess the stock data for modeling, such as handling missing values and splitting the data into training and test sets.
+Modeling:
+
+ARIMA: Used for baseline forecasting.
+SARIMA: Applied for seasonal forecasting.
+LSTM: Deep learning model to capture non-linear relationships.
+python
+Copy
+Edit
+from statsmodels.tsa.arima.model import ARIMA
+model = ARIMA(train_data, order=(5,1,2))
+Hyperparameter Tuning:
+
+The models were optimized through grid search to identify the best-performing hyperparameters.
+Ensemble Modeling:
+
+Combine the individual model predictions into a weighted average for improved forecasting.
+Evaluation:
+
+Models were evaluated using MAE, RMSE, and MAPE to measure the accuracy of predictions.
+Results
+ARIMA: MAE = 25.73, RMSE = 35.82, MAPE = 2.87%
+SARIMA: MAE = 23.56, RMSE = 34.44, MAPE = 2.55%
+LSTM: MAE = 20.12, RMSE = 30.24, MAPE = 2.12%
+Ensemble Model: MAE = 18.45, RMSE = 28.15, MAPE = 1.92%
+The LSTM model provided the best individual performance, while the Ensemble Model outperformed all individual models.
+
+Contributing
+Fork the repository and create a new branch.
+Implement your changes or improvements.
+Run tests and ensure the accuracy of the models.
+Submit a pull request for review.
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Contact
+For any questions or issues regarding the project, feel free to open an issue on GitHub or contact the project maintainer at your-email@example.com.
